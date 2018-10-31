@@ -26,14 +26,6 @@ class Enum extends Type {
 		return 'ENUM('.implode(',', $values).')';
 	}
 	
-	public function convertToPHPValue($value, AbstractPlatform $platform) {
-		return $value;
-	}
-	
-	public function convertToDatabaseValue($value, AbstractPlatform $platform) {
-		return $value;
-	}
-	
 	public function getName() {
 		return self::ENUM;
 	}
