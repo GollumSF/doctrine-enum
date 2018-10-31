@@ -64,7 +64,7 @@ abstract class EnumType extends Type {
 		if ($pos !== false) {
 			$class = substr($class, $pos+1);
 		}
-		$class = mb_strtolower(trim(preg_replace('/(?<=\\w)(?=[A-Z])/'," $1", $class)));
+		$class = str_replace(' ', '_', mb_strtolower(trim(preg_replace('/(?<=\\w)(?=[A-Z])/'," $1", $class))));
 		return self::ENUM.'_'.$class;
 	}
 }
