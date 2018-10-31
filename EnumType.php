@@ -1,5 +1,5 @@
 <?php
-namespace App\Doctrine;
+namespace GollumSF\Doctrine;
 
 use Doctrine\DBAL\Exception\InvalidArgumentException;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
