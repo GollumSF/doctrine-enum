@@ -1,0 +1,33 @@
+{
+	"name" : "gollumsf/doctrine-enum",
+	"type" : "library",
+	"description" : "An enum type for Doctrine MYSQL",
+	"keywords" : [
+		"enum",
+		"doctrine",
+		"symfony"
+	],
+	"homepage" : "https://github.com/GollumSF/doctrine-enum",
+	"license" : "GPL-3.0-or-later",
+	"authors" : [{
+			"name" : "Damien Duboeuf",
+			"email" : "smeagolworms4@gmail.com"
+		}
+	],
+	"support" : {
+		"email" : "smeagolworms4@gmail.com",
+		"wiki" : "https://github.com/GollumSF/doctrine-enum/blob/master/README.md"
+	},
+	"minimum-stability": "dev",
+	"require" : {
+		"php" : ">=7.0",
+		"doctrine/common": "*",
+		"gollumsf/enum": "1.*"
+	},
+	"autoload" : {
+		"psr-0" : {
+			"GollumSF\\Doctrine" : ""
+		}
+	},
+	"target-dir" : "GollumSF/Doctrine"
+}
