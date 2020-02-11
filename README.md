@@ -14,7 +14,7 @@ composer require gollumsf/doctrine-enum
 doctrine:
     dbal:
         types:
-            enum_my_enum:  App\Doctrine\MyEnum
+            enum_my_type:  App\Doctrine\MyTypeEnum
 ```
 
 
@@ -24,13 +24,13 @@ doctrine:
 ```php
 namespace App\Doctrine;
 
-use GollumSF\Doctrine;
-use App\Entity\MyEnum as Enum;
+use GollumSF\Doctrine\EnumType;
+use App\Entity\MyType;
 
-class MyEnum extends EnumType {
+class MyTypeEnum extends EnumType {
 	
 	public function getEnum(): string {
-		return Enum::class;
+		return MyType::class;
 	}
 }
 
@@ -39,19 +39,19 @@ namespace App\Entity;
 use GollumSF\Enum\Enum;
 use Doctrine\ORM\Mapping as ORM;
 
-class MyEnum extends Enum {
+class MyType extends Enum {
 	const VALUE1 = 'VALUE1';
 	const VALUE2 = 'VALUE2';
 	const VALUE3 = 'VALUE3';
 }
 
 /**
- * @ORM\Table()
+ * @ORM\Entity()
  */
 class Entity {
 	
 	/**
-	 * @ORM\Column(type="enum_my_enum")
+	 * @ORM\Column(type="enum_my_type")
 	 * @var int
 	 */
 	private $enum;

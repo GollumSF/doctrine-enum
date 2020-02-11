@@ -46,14 +46,18 @@ abstract class EnumType extends Type {
 	}
 	
 	public function convertToPHPValue($value, AbstractPlatform $platform) {
-		$this->checkClass();
-		$this->checkValue($value);
+		if ($value !== null) {
+			$this->checkClass();
+			$this->checkValue($value);
+		}
 		return $value;
 	}
 	
 	public function convertToDatabaseValue($value, AbstractPlatform $platform) {
-		$this->checkClass();
-		$this->checkValue($value);
+		if ($value !== null) {
+			$this->checkClass();
+			$this->checkValue($value);
+		}
 		return $value;
 	}
 	
