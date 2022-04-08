@@ -34,6 +34,12 @@ abstract class EnumType extends Type {
 		}
 	}
 	
+	/**
+	 * @param array $fieldDeclaration
+	 * @param AbstractPlatform $platform
+	 * @return string
+	 * @throws InvalidArgumentException
+	 */
 	public function getSQLDeclaration(array $fieldDeclaration, AbstractPlatform $platform) {
 		$this->checkClass();
 		$enum = $this->getEnum();
@@ -45,6 +51,11 @@ abstract class EnumType extends Type {
 		return 'ENUM('.implode(',', $values).')';
 	}
 	
+	/**
+	 * @param $value
+	 * @param AbstractPlatform $platform
+	 * @return mixed|string[]|null
+	 */
 	public function convertToPHPValue($value, AbstractPlatform $platform) {
 		if ($value !== null) {
 			$this->checkClass();
@@ -53,6 +64,11 @@ abstract class EnumType extends Type {
 		return $value;
 	}
 	
+	/**
+	 * @param $value
+	 * @param AbstractPlatform $platform
+	 * @return mixed|string|null
+	 */
 	public function convertToDatabaseValue($value, AbstractPlatform $platform) {
 		if ($value !== null) {
 			$this->checkClass();
@@ -61,6 +77,9 @@ abstract class EnumType extends Type {
 		return $value;
 	}
 	
+	/**
+	 * @return string
+	 */
 	public function getName() {
 		$this->checkClass();
 		$class = get_class($this);
