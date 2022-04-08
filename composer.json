@@ -21,8 +21,8 @@
 	"minimum-stability": "dev",
 	"require" : {
 		"php" : ">=7.0",
-		"doctrine/dbal": "2.*",
-		"gollumsf/enum": "1.*"
+		"doctrine/dbal": "^2",
+		"gollumsf/enum": "^2"
 	},
 	"autoload" : {
 		"psr-0" : {
