@@ -26,7 +26,7 @@ abstract class EnumType extends Type {
 		$enum = $this->getEnum();
 		if (!call_user_func($enum.'::isValid', $value)) {
 			throw new InvalidArgumentException(sprintf(
-				'The value %s not valid forclass %s value must be: %S',
+				'The value %s not valid forclass %s value must be: %s',
 				$value,
 				EnumEntity::class,
 				implode(', ', call_user_func($enum.'::getValues'))
